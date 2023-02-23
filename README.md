@@ -38,7 +38,7 @@ N/A
 
 ## Carlos Vargas
 * GitHub Profile: https://github.com/carliys
-* Email: TBD
+* Email: carlosvargas3200@gmail.com
 
 ## Katie Speakman
 * GitHub Profile: https://github.com/krchandler27
