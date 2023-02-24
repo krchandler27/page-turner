@@ -7,6 +7,7 @@
 * [Usage Information](#usage-information)
 * [Test Instructions](#test-instructions)
 * [Contributors](#contributors)
+* [License](#license)
 
 # Project Description
 Page Turner is a web application that allows users to create and join book clubs, discuss books, and organize virtual meetings. Page Turner also uses an internal custom-made database to get and post data about books and allow users to search and filter based on genre, author, and other factors. Page Turner also implements user authentication to allow users to track their reading progress and join multiple book clubs.
@@ -44,5 +45,5 @@ N/A
 * GitHub Profile: https://github.com/krchandler27
 * Email: krchandler27@gmail.com
 
-## License
+# License
 Page Turner is [MIT licensed](./LICENSE).
