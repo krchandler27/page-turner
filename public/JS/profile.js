@@ -6,8 +6,6 @@ const newBookForm = async (event) => {
     const description = document.getElementById('description').value.trim();
     const genres = document.getElementById('genres').value.trim();
     const image = document.getElementById('image').value.trim();
-
-
   
     if (bookName && author && description && genres && image) {
       const response = await fetch(`/api/books`, {
