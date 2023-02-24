@@ -1,0 +1,23 @@
+[
+    {
+      "book_name": "Frankenstein",
+      "Author": "Mary Shelley",
+      "description": "'Frankenstein' is a novel by Mary Shelley, first published in 1818. The story follows Victor Frankenstein, a young scientist who creates a sentient being from reanimated human body parts. Horrified by his creation, Victor abandons the creature, who is left to navigate the world alone and experiences rejection and isolation from society. The creature learns to read and becomes self-aware, ultimately seeking out his creator to demand that Victor make him a mate. Victor refuses and the creature vows revenge, resulting in a tragic series of events that culminates in the deaths of several characters. The novel explores themes of creation, ambition, responsibility, and the consequences of unchecked scientific progress. It is widely regarded as a classic of Gothic and science fiction literature, and has been adapted into numerous films, plays, and other works of art.",
+      "genres": "gothic fiction",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51WwK1b5d2L._SX316_BO1,204,203,200_.jpg"
+    },
+    {
+      "book_name": "To Kill a Mockingbird",
+      "Author": "Harper Lee",
+      "description": "'To Kill a Mockingbird' is a novel by Harper Lee, published in 1960. The story takes place in the 1930s in Maycomb, Alabama, and is told from the perspective of the young girl Scout Finch. Scout's father, Atticus Finch, is a lawyer who is asked to defend a black man, Tom Robinson, who has been accused of raping a white woman. As the trial progresses, Scout and her brother Jem witness the racism and prejudice of their small town, and begin to question the values and beliefs of the people around them. The novel explores themes of racial injustice, social inequality, and the power of empathy and compassion. Through the eyes of Scout, the reader sees the impact of the trial on the Finch family and the town, and how their experiences shape their understanding of the world.",
+      "genres": "Southern Gothic",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51B1iFpSPML._SX310_BO1,204,203,200_.jpg"
+    },
+    {
+      "book_name": "The Great Gatsby",
+      "Author": "F. Scott Fitzgerald",
+      "description": "'The Great Gatsby' is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.",
+      "genres": "Novel, Fiction, Tragedy",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41f0JlmhRcL._SX324_BO1,204,203,200_.jpg"
+    }
+]
