@@ -8,40 +8,53 @@
   <div class="col-md-6">
     <h3>Create a New Book Club:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-book-form">
       <div class="form-group">
-        <label for="project-name">Book Name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="book-name">Book Name:</label>
+        <input class="form-input" type="text" id="book-name" name="book-name" />
       </div>
       <div class="form-group">
-        <label for="project-funding">Meeting Time (Enter a day, time, and frequency to meet):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label for="book-author">Author:</label>
+        <input class="form-input" type="text" id="book-author" name="book-author" />
       </div>
       <div class="form-group">
-        <label for="project-desc">Plug about your book club to get readers interested in joining!:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="book-genres">Genres:</label>
+        <input class="form-input" type="text" id="book-genres" name="book-genres" />
       </div>
       <div class="form-group">
-        <label for="project-desc">Description of your book:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="book-image">Book Image:</label>
+        <input class="form-input" type="text" id="book-image" name="book-image" />
       </div>
+      <div class="form-group">
+        <label for="book-description">Description of your book:</label>
+        <textarea class="form-input" id="book-description" name="book-description"></textarea>
+      </div>
+      {{!-- <div class="form-group">
+        <label for="book-funding">Meeting Time (Enter a day, time, and frequency to meet):</label>
+        <input class="form-input" type="number" id="book-funding" name="book-funding" />
+      </div>
+      <div class="form-group">
+        <label for="book-desc">Plug about your book club to get readers interested in joining!:</label>
+        <textarea class="form-input" id="book-desc" name="book-desc"></textarea>
+      </div> --}}
+      
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if books.length}}
+  <div class="col-md-6 book-list">
+    <h3>Current Books:</h3>
 
-    {{#each projects as |project|}}
+    {{#each books as |book|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/book/{{book.id}}">{{book.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{book.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
