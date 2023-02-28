@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
 });
 
 // Find book by unique ID
-router.get("/book/:id", async (req, res) => {
+router.get("/books/:id", async (req, res) => {
     try {
         const bookInfo = await Book.findByPk(req.params.id, {
             include: [{

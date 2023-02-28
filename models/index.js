@@ -7,7 +7,7 @@ User.hasMany(Book, {
   onUpdate: 'CASCADE'
 });
 
-Project.belongsTo(User, {
+Book.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
