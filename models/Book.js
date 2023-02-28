@@ -19,7 +19,7 @@ Book.init(
         type: DataTypes.STRING,
       },
       description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
       },
       genres: {
         type: DataTypes.STRING,
