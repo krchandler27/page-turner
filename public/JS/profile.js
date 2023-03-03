@@ -22,33 +22,29 @@ const newBookForm = async (event) => {
       } else {
         alert('Could not create book 🚫');
       }
-    }
-  };
-  
-  const deleteBookButton = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/books/${id}`, {
-        method: 'DELETE',
-      });
-  
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Could not delete book 🚫');
-      }
-    }
-  };
 
-
-  const createNewBookClub = async (event) => {
-    document.location.replace('/');
+    }
   }
-  
-  document.querySelector('.new-book-form').addEventListener('submit', newBookForm);
-  
-  document.querySelector('.book-list').addEventListener('click', deleteBookButton);
+};
 
-const imageElement = document.createElement('img');
-imageElement.src = Book.image;
+const deleteBookButton = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/books/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Could not delete book 🚫');
+    }
+
+  }
+};
+
+document.querySelector('.new-book-form').addEventListener('submit', newBookForm);
+
+document.querySelector('.book-list').addEventListener('click', deleteBookButton);
+
