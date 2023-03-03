@@ -1,19 +1,29 @@
-<!-- Loop over each object in the books array -->
-{{#each books as |book| }}
-<div class="row mb-4 book">
-  <div class="col-md-5">
-    <h2>
-      <a href="/books/{{book.id}}">{{book.book_name}}</a>
+<!-- Loop over each object in the books array and display each object -->
 
-    </h2>
-    <h5>{{book.Author}}</h5>
-    <h6>{{book.genres}}</h6>
-    <h6>{{book.image}}</h6>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{book.description}}
-    </p>
-  </div>
+{{#each books as |book| }}
+<div class="row d-flex justify-content-center">
+<div class="book d-flex flex-column mb-3 w-50 ">
+    <div class="align-self-center">
+      <h2>
+        <a href="/books/{{book.id}}">{{book.book_name}}</a>
+      </h2>
+    </div>
+    <div class="align-self-center">
+        <h5>{{book.author}}</h5>
+    </div>
+    <div class="align-self-center">
+        <h6>{{book.genres}}</h6>
+    </div>
+    <div class="align-self-center">
+        <img src="{{book.image}}" class="rounded mx-auto d-block" alt="book-image">
+    </div>
+    <div class="align-self-center">
+      <br>
+      <br>
+      <p>
+        {{book.description}}
+      </p>
+    </div>
+</div>
 </div>
 {{/each}}
