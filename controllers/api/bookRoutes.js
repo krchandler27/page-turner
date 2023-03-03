@@ -5,6 +5,8 @@ const authorize = require("../../utils/auth");
 // Post new book after being signed in to profile
 router.post("/", authorize, async (req, res) => {
     try {
+        console.log(req.body)
+
         const newBook = await Book.create({
             ...req.body,
             user_id: req.session.user_id
@@ -27,7 +29,8 @@ router.delete("/:id", authorize, async (req, res) => {
 
         if (!bookInfo) {
             res.status(404).json({
-                message: "No matching book ID 🚫"});
+                message: "No matching book ID 🚫"
+            });
             return;
         }
         res.status(202).json(bookInfo);

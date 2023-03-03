@@ -15,7 +15,7 @@ Book.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-      Author: {
+      author: {
         type: DataTypes.STRING,
       },
       description: {

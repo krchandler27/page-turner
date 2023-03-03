@@ -1,24 +1,24 @@
 const newBookForm = async (event) => {
     event.preventDefault();
   
-    const bookName = document.getElementById('book-name').value.trim();
+    const book_name = document.getElementById('book-name').value.trim();
     const author = document.getElementById('book-author').value.trim();
     const genres = document.getElementById('book-genres').value.trim();
     const image = document.getElementById('book-image').value.trim();
     const description = document.getElementById('book-description').value.trim();
     
   
-    if (bookName && author && description && genres && image) {
+    if (book_name && author && description && genres && image) {
       const response = await fetch(`/api/books`, {
         method: 'POST',
-        body: JSON.stringify({ bookName, author, description, genres, image }),
+        body: JSON.stringify({ book_name, author, description, genres, image }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/');
       } else {
         alert('Could not create book 🚫');
       }
@@ -40,7 +40,15 @@ const newBookForm = async (event) => {
       }
     }
   };
+
+
+  const createNewBookClub = async (event) => {
+    document.location.replace('/');
+  }
   
   document.querySelector('.new-book-form').addEventListener('submit', newBookForm);
   
   document.querySelector('.book-list').addEventListener('click', deleteBookButton);
+
+const imageElement = document.createElement('img');
+imageElement.src = Book.image;

@@ -4,6 +4,10 @@
   </div>
 </div>
 
+<div class="form-group">
+        <button type="submit" class="btn btn-primary">Create a New Book CLub</button>
+      </div>
+
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Book Club:</h3>
@@ -29,20 +33,12 @@
         <label for="book-description">Description of your book:</label>
         <textarea class="form-input" id="book-description" name="book-description"></textarea>
       </div>
-      {{!-- <div class="form-group">
-        <label for="book-funding">Meeting Time (Enter a day, time, and frequency to meet):</label>
-        <input class="form-input" type="number" id="book-funding" name="book-funding" />
-      </div>
-      <div class="form-group">
-        <label for="book-desc">Plug about your book club to get readers interested in joining!:</label>
-        <textarea class="form-input" id="book-desc" name="book-desc"></textarea>
-      </div> --}}
-      
+           
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
+  </div> 
 
   {{#if books.length}}
   <div class="col-md-6 book-list">
@@ -62,4 +58,4 @@
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+
