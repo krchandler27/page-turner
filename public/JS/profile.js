@@ -1,5 +1,5 @@
 const newBookForm = async (event) => {
-  event.preventDefault();
+ event.preventDefault();
 
   const book_name = document.getElementById('book-name').value.trim();
   const author = document.getElementById('book-author').value.trim();
@@ -25,6 +25,7 @@ const newBookForm = async (event) => {
   }
 };
 
+
 document.querySelector('.new-book-form').addEventListener('submit', newBookForm);
 
 const deleteBookButton = async (event) => {
@@ -49,3 +50,4 @@ const deleteBookButton = async (event) => {
   
   document.querySelector('.new-book-form').addEventListener('submit', newBookForm);
   document.querySelector('.book-list').addEventListener('click', deleteBookButton);
+
