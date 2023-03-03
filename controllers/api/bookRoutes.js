@@ -2,10 +2,9 @@ const router = require("express").Router();
 const { Book } = require("../../models");
 const authorize = require("../../utils/auth");
 
-// Post new book after being signed in to profile
+// Post/create new book after being signed in to profile
 router.post("/", authorize, async (req, res) => {
     try {
-        console.log(req.body)
 
         const newBook = await Book.create({
             ...req.body,
