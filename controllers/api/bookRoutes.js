@@ -23,7 +23,7 @@ router.delete("/:id", authorize, async (req, res) => {
         const bookInfo = await Book.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.user.id
+                user_id: req.session.user_id
             }
         });
 

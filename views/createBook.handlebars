@@ -1,41 +1,4 @@
-<div class="row d-flex justify-content-center">
-  <div class="p-2 w-75 text-center">
-    <h2 class="text-success fs-1">Welcome, {{name}}!</h2>
-  </div>
-</div>
-<div class="row d-flex justify-content-center">
-  <div class="p-2 w-50 text-center">
-    <a href="/createBook">➕Create Book 📖</a>
-  </div>
-</div>
-
-
-  {{#if books.length}}
-  <div class="book-list row d-flex justify-content-center">
-    <div class="d-flex flex-column mb-3 w-50">
-    <h3>Current Books:</h3>
-
-    {{#each books as |book|}}
-    <div class="row d-flex">
-      <div class="d-flex justify-content-between">
-        <h4><a href="/books/{{book.id}}">📖 {{book.book_name}}</a></h4>
-        <div class="row align-self-end">
-        <button class="btn btn-sm btn-danger" data-id="{{book.id}}">DELETE</button>
-        </div>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-<br>
-<br>
-<br>
-</div>
-
-
-
-<div class="row m-4">
+<div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Book:</h3>
 
@@ -60,10 +23,8 @@
         <label for="book-description">Description of your book:</label>
         <textarea class="form-input" id="book-description" name="book-description"></textarea>
       </div>
-
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
   </div>
-

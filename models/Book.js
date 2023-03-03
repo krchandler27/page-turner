@@ -25,7 +25,7 @@ Book.init(
         type: DataTypes.STRING,
       },
       image: {
-        type: DataTypes.STRING,
+        type: DataTypes.BLOB,
       },
       user_id: {
         type: DataTypes.INTEGER,
