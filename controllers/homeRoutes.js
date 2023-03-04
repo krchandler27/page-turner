@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
 });
 
 // Find book by unique ID
-router.get("/books/:id", async (req, res) => {
+router.get("/books/:id", authorize, async (req, res) => {
     try {
         const bookInfo = await Book.findByPk(req.params.id, {
             include: [{
@@ -40,6 +40,25 @@ router.get("/books/:id", async (req, res) => {
         res.render("book", {
             ...book,
             logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(505).json(err);
+    }
+});
+
+// Must be logged in to create book
+router.get("/createBook", authorize, async (req, res) => {
+    try {
+        const userInfo = await User.findByPk(req.session.user_id, {
+            attributes: {exclude: ["password"]},
+            include: [{model: Book}]
+        });
+
+        const user = userInfo.get({plain: true});
+
+        res.render("createBook", {
+            ...user,
+            logged_in: true
         });
     } catch (err) {
         res.status(505).json(err);
