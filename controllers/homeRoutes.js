@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Book, User } = require("../models");
+const { Book, User, Comment } = require("../models");
 const authorize = require("../utils/auth");
 
 // Find all books and add User name
@@ -45,6 +45,42 @@ router.get("/books/:id", async (req, res) => {
         res.status(505).json(err);
     }
 });
+
+// Get a single post with comments and user data
+router.get("/books/comments/:id", (req, res) => {
+    books.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        },
+        {
+          model: Comment,
+          include: [User]
+        }
+      ]
+    })
+      .then((dbPostData) => {
+        if (dbPostData) {
+          const post = dbPostData.get({ plain: true });
+  
+          res.render("single-post", { 
+            post,
+            loggedIn: req.session.loggedIn 
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+  
 
 // Must be logged in to get profile information
 router.get("/profile", authorize, async (req, res) => {

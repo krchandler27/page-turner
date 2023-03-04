@@ -3,12 +3,11 @@ const router = require("express").Router();
 const { Comment, User } = require("../../models/");
 const withAuth = require("../../utils/auth");
 
-
 // Route for getting all comments for a post
-router.get('/:book.id', (req, res) => {
+router.get('/:id', (req, res) => {
   Comment.findAll({
     where: {
-      postId: req.params.postId
+      book_id: req.params.id
     },
     include: {
       model: User,
@@ -26,11 +25,14 @@ router.get('/:book.id', (req, res) => {
 });
 
 // Route for creating a new comment
-router.post("/", withAuth, (req, res) => {
-  console.log(req.body);
-
-  Comment.create({ ...req.body, userId: req.session.userId })
+router.post("/:book_id/comment", withAuth, (req, res) => {
+  Comment.create({ 
+    comment_text: req.body.comment_text,
+    book_id: req.params.book_id, 
+    user_id: req.session.user_id 
+  })
     .then(newComment => {
+      console.log(newComment);
       res.json(newComment);
     })
     .catch(err => {

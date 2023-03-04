@@ -4,7 +4,30 @@
   <h6>{{genres}}</h6>
   <h6>{{image}}</h6>
   <p>{{description}}</p>
-  {{!-- <p>Created by {{user.name}} on {{format_date date_created}}</p> --}}
+  
+  <p>Book ID: {{book.id}}</p>
+  {{!-- Add this line to check book.id value --}}
+
+  <form id="new-comment-form" action="/books/{{book.id}}/comment" method="POST">
+    <div class="form-group">
+      <label for="comment">Add a comment:</label>
+      <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+  {{!-- Display existing comments --}}
+  {{#if book_comments}}
+    <h3>Comments:</h3>
+    {{#each book_comments}}
+      <div>
+        <p>By {{this.user.username}} on {{format_date this.createdAt}}</p>
+        <p>{{this.comment}}</p>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>No comments yet.</p>
+  {{/if}}
   
   <p>
     <button class="btn btn-primary">Read Book</button>
