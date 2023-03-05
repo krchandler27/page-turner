@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-   <link rel="shortcut icon" href="assets/images/book_shortcut.JPG">
+  <link rel="shortcut icon" href="assets/images/book_shortcut.JPG">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
   <title>Page Turner</title>
@@ -14,27 +14,27 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-5">
+    <header class="display-flex justify-space-between align-center p-3">
       <h1>
+        <a href="/" id="mainTitle" class="hvr-curl-top-right">Page Turner</a>
         <span role="img" aria-label="stacked-books">📚</span>
-        <a href="/">Page Turner</a>
       </h1>
       <nav class="d-flex justify-content-end p-3">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a class="mx-3" href="/profile">profile</a> |
-        <button class="no-button mx-3" id="logout">logout</button>
+        <a class="mx-3" href="/profile">My Profile</a> |
+        <button class="no-button mx-3" id="logout">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login" id="login">Login</a>
         {{/if}}
       </nav>
     </header>
-    <main class="container container-fluid mt-5">
+    <main class="container container-fluid mt-3">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <footer>
-      
+
     </footer>
   </div>
 
@@ -45,7 +45,7 @@
   <script src="/js/createBook.js"></script>
   <script src="/js/addComment.js"></script>
   {{/if}}
-  
+
   <script src="/js/login.js"></script>
 </body>
 
