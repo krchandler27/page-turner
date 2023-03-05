@@ -1,0 +1,31 @@
+{{!-- Form for adding new comment to book --}}
+<div>
+  <div class="row d-flex justify-content-center">
+    <div class="book d-flex flex-column mb-3 w-50">
+      <div class="align-self-center">
+        <h2 class="text-center text-success fs-1">{{book_name}}</h2>
+      </div>
+    </div>
+  </div>
+
+  <form id="new-comment-form" class="card">
+    <div class="card-header">
+      <h3>Add New Comment</h3>
+    </div>
+
+    <div class="card-body">
+      <input type="hidden" name="book_id" value="{{id}}" />
+
+      <label class="form-label" for="comment-body">Comment</label>
+
+      <textarea
+        name="comment-body"
+        class="form-input"
+        id="comment-body"
+      ></textarea>
+
+      <button id="comment-save" type="submit" class="btn btn-primary">Save
+        Comment</button>
+    </div>
+  </form>
+</div>

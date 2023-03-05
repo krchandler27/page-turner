@@ -1,41 +1,43 @@
+// Import dependencies
 const router = require("express").Router();
-const { Book } = require("../../models");
+const { Comment } = require("../../models");
 const authorize = require("../../utils/auth");
 
-// Post/create new book after being signed in to profile
+// Route for creating a new comment after being signed in to profile
 router.post("/", authorize, async (req, res) => {
   try {
-    const newBook = await Book.create({
+    const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(202).json(newBook);
+    res.status(202).json(newComment);
   } catch (err) {
     res.status(404).json(err);
   }
 });
 
-// Delete book created by user
+//Delete comment added by user
 router.delete("/:id", authorize, async (req, res) => {
   try {
-    const bookInfo = await Book.destroy({
+    const commentInfo = await Comment.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!bookInfo) {
+    if (!commentInfo) {
       res.status(404).json({
-        message: "🚫 No matching book ID 🚫",
+        message: "🚫 No matching comment ID 🚫",
       });
       return;
     }
-    res.status(202).json(bookInfo);
+    res.status(202).json(commentInfo);
   } catch (err) {
     res.status(404).json(err);
   }
 });
 
+// Export the router
 module.exports = router;

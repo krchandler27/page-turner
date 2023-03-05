@@ -1,3 +1,4 @@
+// Login if user already has a profile
 const loginForm = async (event) => {
   event.preventDefault();
 
@@ -16,11 +17,12 @@ const loginForm = async (event) => {
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert(response.statusText);
+      alert("🚫 Email & Password don't match 🚫");
     }
   }
 };
 
+// Create new profile
 const signupForm = async (event) => {
   event.preventDefault();
 
@@ -38,7 +40,7 @@ const signupForm = async (event) => {
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert(response.statusText);
+      alert("🚫 One or more inputs are incorrect 🚫");
     }
   }
 };

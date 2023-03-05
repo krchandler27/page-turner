@@ -1,3 +1,4 @@
+// User can delete book which they have created
 const deleteBookButton = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');

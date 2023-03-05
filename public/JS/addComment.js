@@ -1,39 +1,30 @@
-const commentFormHandler = async function(event) {
-    event.preventDefault();
-  
-    // const comment_id = document.querySelector('input[name="data-id"]').value;
-    const body = document.querySelector('textarea[name="comment-body"]').value;
-  
-    if (body) {
-      const response = await fetch('/api/comments', {
-        method: 'POST',
-        body: JSON.stringify({ body }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-  
-      // Retrieve the new comment from the server
-      // const response = await fetch(`/api/comments/${id}`);
-      const { comments } = await response.json();
-      const commentsSection = document.querySelector('#comments-section');
-  
-      // Clear the comments section and append the updated comments
-      // commentsSection.innerHTML = '';
-      comments.forEach(comment => {
-        const commentEl = document.createElement('div');
-        commentEl.innerHTML = `
-          <p>${comment.body}</p>
-          <p>&mdash; ${comment.User.username}, ${format_date(comment.createdAt)}</p>
-        `;
-        commentsSection.appendChild(commentEl);
-      });
-  
-      // Clear the comment form
-      document.querySelector('textarea[name="comment-body"]').value = '';
+// Form for creating new book comment
+const commentFormHandler = async function (event) {
+  event.preventDefault();
+
+  const book_id = document.querySelector('input[name="book_id"]').value;
+  const body = document.getElementById("comment-body").value.trim();
+
+  console.log(book_id);
+  console.log(body);
+
+  if (body && book_id) {
+    const response = await fetch("/api/comments", {
+      method: "POST",
+      body: JSON.stringify({ body, book_id }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace("/books/" + book_id);
+    } else {
+      alert("Could not add comment 🚫");
     }
-  };
-  
-  document
-    .querySelector('#new-comment-form')
-    .addEventListener('submit', commentFormHandler);
+  }
+};
+
+document
+  .querySelector("#new-comment-form")
+  .addEventListener("submit", commentFormHandler);
