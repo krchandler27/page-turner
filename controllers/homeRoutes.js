@@ -127,6 +127,25 @@ router.get("/books/:id/addComment", authorize, async (req, res) => {
   }
 });
 
+// Must be logged in to view calendar
+router.get("/profile/calendar", authorize, async (req, res) => {
+  try {
+    const userInfo = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Book }],
+    });
+
+    const user = userInfo.get({ plain: true });
+
+    res.render("calendar", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(505).json(err);
+  }
+});
+
 // Must be logged in to get profile information
 router.get("/profile", authorize, async (req, res) => {
   try {
