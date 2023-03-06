@@ -3,25 +3,26 @@
   <div class="d-flex flex-column mb-3 w-50">
     <h3 class="text-center text-success">Add a New Book:</h3>
 
-    <form class="form new-book-form">
+<div class="px-5 pt-3" style="background-image: url('/assets/images/scroll.png'); background-repeat:no-repeat; background-size: contain;">
+    <form class="form new-book-form pb-5 px-5">
       <div class="form-group">
-        <label for="book-name">Book Name:</label>
-        <input class="form-input" type="text" id="book-name" name="book-name" />
+        <label for="book-name" style="font-weight: bold;">Book Name:</label>
+        <input class="form-input" type="text" id="book-name" name="book-name"/>
       </div>
       <div class="form-group">
-        <label for="book-author">Author:</label>
+        <label for="book-author" style="font-weight: bold;">Author:</label>
         <input class="form-input" type="text" id="book-author" name="book-author" />
       </div>
       <div class="form-group">
-        <label for="book-genres">Genre(s):</label>
+        <label for="book-genres" style="font-weight: bold;">Genre(s):</label>
         <input class="form-input" type="text" id="book-genres" name="book-genres" />
       </div>
       <div class="form-group">
-        <label for="book-image">Book Image:</label>
-        <input class="form-input" type="text" id="book-image" name="book-image" />
+        <label for="book-image" style="font-weight: bold;">Book Image:</label>
+        <input class="form-input" type="text" id="book-image" name="book-image" placeholder="Right click on web image, 'Copy image address' & paste"/>
       </div>
       <div class="form-group">
-        <label for="book-description">Description of your book:</label>
+        <label for="book-description" style="font-weight: bold;">Description of your book:</label>
         <textarea class="form-input" id="book-description" name="book-description"></textarea>
       </div>
       <div class="form-group d-flex justify-content-center">
@@ -30,5 +31,6 @@
         </p>
       </div>
     </form>
+    </div>
   </div>
 </div>

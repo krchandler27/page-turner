@@ -1,6 +1,6 @@
-{{!-- Display for a single book with comments --}}
-<div class="row d-flex justify-content-center">
-  <div class="book d-flex flex-column mb-3 w-50">
+{{! Display for a single book with comments }}
+<div class="row d-flex justify-content-center py-5" style="background-image: url('/assets/images/blank-book.webp'); background-repeat:no-repeat; background-size:cover;">
+  <div class="book d-flex flex-column m-5 w-50" >
     <div class="align-self-center">
       <h1 class="text-success fs-1">{{book_name}}</h1>
     </div>
@@ -33,10 +33,14 @@
         <a href="/books/{{id}}/addComment" class="btn btn-primary">Add Comment</a>
       </p>
     </div>
+  </div>
+</div>
 
-    <!-- Loop over each comment in the comments array and display each comment -->
+<!-- Loop over each comment in the comments array and display each comment -->
+<div class="row d-flex justify-content-center mt-5">
+  <div class="book d-flex flex-column mb-3 w-50">
     {{#each comments as |comment|}}
-      <div class="row d-flex justify-content-center border rounded mb-3">
+      <div class="row d-flex justify-content-center pt-3 border border-primary border-4 rounded mb-3">
         <div class="book d-flex flex-column mb-3 w-50">
           <div class="align-self-center">
             <h4 class="fs-5">{{comment.body}}</h4>
