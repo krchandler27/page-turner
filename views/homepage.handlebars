@@ -1,38 +1,47 @@
 <h1 class="title">My Library</h1>
-<hr>
+<hr />
 <!-- Loop over each book in the books array and display each book -->
-{{#each books as |book| }}
-<div class="row d-flex justify-content-center page">
-  <div class="book d-flex flex-column w-50 border border-5 border-light">
-    <div class="align-self-center">
-      <h2>
-        <a href="/books/{{book.id}}" class="hvr-curl-top-right">{{book.book_name}}</a>
-      </h2>
-    </div>
-    <div class="align-self-center">
-      <h5>By: {{book.author}}</h5>
-    </div>
-    <div class="align-self-center">
-      <h6>Genre: {{book.genres}}</h6>
-    </div>
-    <div class="align-self-center container">
-      <img src="{{book.image}}" class="rounded mx-auto d-block" style="max-width: 50%" alt="book-image">
-    </div>
-    <div class="align-self-center">
-      <br>
-      <br>
-      <p class="text-justify">
-        {{book.description}}
-      </p>
-      <br>
+{{#each books as |book|}}
+  <div     class="row d-flex justify-content-center page"
+    style="background-image: url('/assets/images/book-cover.jpg'); background-repeat:no-repeat; background-size: cover"
+  >
+     <div class="book d-flex flex-column w-50 border border-5 border-light">
+      <div class="align-self-center">
+        <h2>
+          <a
+            href="/books/{{book.id}}"
+            class="hvr-curl-top-right"
+          >{{book.book_name}}</a>
+        </h2>
+      </div>
+      <div class="align-self-center">
+        <h5>By: {{book.author}}</h5>
+      </div>
+      <div class="align-self-center">
+        <h6>Genre: {{book.genres}}</h6>
+      </div>
+      <div class="align-self-center container">
+        <img
+          src="{{book.image}}"
+          class="rounded mx-auto d-block"
+          style="max-width: 50%"
+          alt="book-image"
+        />
+      </div>
+      <div class="align-self-center">
+        <br />
+        <br />
+        <p class="text-justify">
+          {{book.description}}
+        </p>
+      </div>
     </div>
   </div>
-</div>
-<br>
+  <br>
 {{/each}}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
