@@ -185,3 +185,8 @@ hr {
   transform: translateY(5px);
   /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
+
+#calendar {
+  max-width: 1100px;
+  margin: 40px auto;
+}
