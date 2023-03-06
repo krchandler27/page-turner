@@ -1,9 +1,9 @@
-<h1 class="title">Library</h1>
+<h1 class="title">My Library</h1>
 <hr>
 <!-- Loop over each book in the books array and display each book -->
 {{#each books as |book| }}
 <div class="row d-flex justify-content-center page">
-  <div class="book d-flex flex-column w-50">
+  <div class="book d-flex flex-column w-50 border border-5 border-light">
     <div class="align-self-center">
       <h2>
         <a href="/books/{{book.id}}" class="hvr-curl-top-right">{{book.book_name}}</a>
@@ -24,9 +24,11 @@
       <p class="text-justify">
         {{book.description}}
       </p>
+      <br>
     </div>
   </div>
 </div>
+<br>
 {{/each}}
 <br>
 <br>
