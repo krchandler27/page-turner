@@ -1,12 +1,11 @@
-<h1 class="title">Library</h1>
+<h1 class="title">My Library</h1>
 <hr />
 <!-- Loop over each book in the books array and display each book -->
 {{#each books as |book|}}
-  <div
-    class="row d-flex justify-content-center page border m-5"
+  <div     class="row d-flex justify-content-center page"
     style="background-image: url('/assets/images/book-cover.jpg'); background-repeat:no-repeat; background-size: cover"
   >
-    <div class="book d-flex flex-column w-50 mt-5 p-5">
+     <div class="book d-flex flex-column w-50 border border-5 border-light">
       <div class="align-self-center">
         <h2>
           <a
@@ -38,6 +37,7 @@
       </div>
     </div>
   </div>
+  <br>
 {{/each}}
 <br />
 <br />

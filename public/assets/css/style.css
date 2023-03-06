@@ -39,6 +39,10 @@ hr {
   margin-right: -500px;
 }
 
+.titleSize {
+  font-size: 30px;
+}
+
 .container-fluid {
   padding: 0;
 }

@@ -22,8 +22,8 @@
       <nav class="d-flex justify-content-end p-3">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a class="mx-3" href="/profile">My Profile</a> |
-        <button class="no-button mx-3" id="logout">Logout</button>
+        <a class="mx-3 titleSize" href="/profile">My Profile</a> 
+        <button class="no-button mx-3 titleSize" id="logout">| &nbsp; Logout</button>
         {{else}}
         <a href="/login" id="login">Login</a>
         {{/if}}
