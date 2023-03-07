@@ -36,35 +36,43 @@ document.addEventListener("DOMContentLoaded", function () {
     selectMirror: true,
     selectHelper: true,
     select: function (arg) {
-      var myModal = new bootstrap.Modal(
+        var myModal = new bootstrap.Modal(
         document.getElementById("calendarModal"),
         {
           keyboard: false,
         }
       );
+      
       myModal.toggle();
-    //   arg.preventDefault();
 
-      document.getElementById("saveButton").addEventListener("click", () => {
+      document.getElementById("saveButton").addEventListener("click", (event) => {
+        event.preventDefault();
+        
         const eventName = document.getElementById("eventName").value.trim();
         const startDate = moment(arg.start).format("YYYY-MM-DD");
         const endDate = moment(arg.end).format("YYYY-MM-DD");
-        const allDay = moment(arg.allDay).format("YYYY-MM-DD");
+        const allDay = moment(arg.allDay);
 
         if(eventName) {
             calendar.addEvent({
                 title: eventName,
                 start: startDate,
                 end: endDate,
+                allDay: arg.allDay,
                 
             })
         }
-        calendar.unselect()
+        calendar.unselect();
+
+        document.querySelector(".modal").addEventListener("hidden.bs.modal", () => {
+            document.querySelector(".modal-body").innerHTML("");
+        });
+          
 
         console.log(startDate);
         console.log(endDate);
         console.log(allDay);
-      })
+      });
     },
     // select: function (arg) {
     //   var title = prompt("Event Title:");
