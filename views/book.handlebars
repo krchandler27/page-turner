@@ -5,51 +5,35 @@
       <h1 class="text-success fs-1">{{book_name}}</h1>
     </div>
     <div class="align-self-center">
-      <h5 class="fs-3">{{author}}</h5>
+      <h5 class="fs-3">By: {{author}}</h5>
     </div>
     <div class="align-self-center">
-      <h6 class="fs-5">{{genres}}</h6>
-    </div>
-    <div class="align-self-center container">
-      <img
-        src="{{image}}"
-        class="rounded mx-auto d-block"
-        style="max-width: 50%"
-        alt="book-image"
-      />
-    </div>
-    <div class="align-self-center">
-      <br />
       <br />
       <p class="text-justify fs-6">
         {{description}}
       </p>
     </div>
-    <br />
-    <br />
+
     <br />
     <div class="align-self-center">
       <p>
-        <a href="/books/{{id}}/addComment" class="btn btn-primary">Add Comment</a>
+        <a href="/books/{{id}}/addComment" class="btn btn-primary">Add a comment</a>
       </p>
     </div>
-  </div>
-</div>
-
-<!-- Loop over each comment in the comments array and display each comment -->
-<div class="row d-flex justify-content-center mt-5">
-  <div class="book d-flex flex-column mb-3 w-50">
+<br>
+Comments:
+    <!-- Loop over each comment in the comments array and display each comment -->
     {{#each comments as |comment|}}
-      <div class="row d-flex justify-content-center pt-3 border border-primary border-4 rounded mb-3">
-        <div class="book d-flex flex-column mb-3 w-50">
-          <div class="align-self-center">
-            <h4 class="fs-5">{{comment.body}}</h4>
-          </div>
-        </div>
-        <div>
-          <h6 class="fs-6 text-end">➡️ {{user.name}}</h6>
+    <div class="row d-flex justify-content-center border rounded mb-3">
+      <div class="book d-flex flex-column mb-3 w-50">
+        <div class="align-self-center">
+          <h4 class="fs-5">{{comment.body}}</h4>
         </div>
       </div>
+      <div>
+        <h6 class="fs-6 text-end">-{{user.name}}</h6>
+      </div>
+    </div>
     {{/each}}
   </div>
 </div>
