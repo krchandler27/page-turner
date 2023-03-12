@@ -17,6 +17,31 @@ router.post("/", authorize, async (req, res) => {
   }
 });
 
+// Update comment made by user when signed in
+router.put("/:id", authorize, async (req, res) => {
+  try {
+    const findComment = await Comment.update(
+      {
+        body: req.body.body,
+      },
+      {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      }
+    );
+
+    if (!findComment) {
+      res.status(404).json({ message: "🚫 Comment ID Not Found 🚫" });
+      return;
+    }
+    res.status(202).json(findComment);
+  } catch (err) {
+    res.status(505).json(err);
+  }
+});
+
 //Delete comment added by user
 router.delete("/:id", authorize, async (req, res) => {
   try {

@@ -21,3 +21,22 @@ const deleteBookButton = async (event) => {
   
   document.querySelector('.book-list').addEventListener('click', deleteBookButton);
 
+// Delete an existing comment
+const deleteCommentButton = async (event) => {
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+    const commentDelete = await fetch(`/api/comments/${id}`, {
+      method: "DELETE",
+    });
+
+    if (commentDelete.ok) {
+      document.location.replace("/profile");
+    } else {
+      alert("🚫 Could not delete Comment 🚫");
+    }
+  }
+};
+
+document
+  .querySelector(".comment-list")
+  .addEventListener("click", deleteCommentButton);
