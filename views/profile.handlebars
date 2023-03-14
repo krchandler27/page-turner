@@ -9,6 +9,7 @@
 
 
 <div style="background-color: white;">
+  <div>
   <div class="row">
   <a href="https://www.zoom.us/signin#/login" class="text-end pe-5 fs-5" style="color:blue; font-weight:bolder">ZOOM</a>
   </div>
@@ -38,8 +39,11 @@
     <div class="row d-flex">
       <div class="d-flex justify-content-between">
         <h4><a href="/books/{{book.id}}">📖 {{book.book_name}}</a></h4>
-        <div class="row align-self-end">
-        <button class="btn btn-sm btn-danger" data-id="{{book.id}}">DELETE</button>
+        <div class="d-flex flex-row align-items-center">
+        <div class="update-post d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="/books/{{book.id}}/updateBook" class="btn btn-sm btn-info me-md-2" >Update</a>
+            <button class="btn btn-sm btn-danger" data-id="{{book.id}}">Delete</button>
+        </div>
         </div>
       </div>
     </div>
@@ -50,5 +54,40 @@
 <br>
 <br>
 <br>
+</div>
+</div>
+
+{{!-- Show User's comments on User's profile --}}
+<div style="background-color: white;">
+  <div>
+  {{#if comments.length}}
+  <div class="comment-list row d-flex justify-content-center">
+    <div class="d-flex flex-column mb-3 w-50">
+    <h3>My comments:</h3>
+
+    {{#each comments as |comment|}}
+    <div class="row d-flex border mb-3 p-1">
+      <div class="d-flex justify-content-between">
+        <div class="container">
+        <h4 class="fs-6">💭 {{comment.body}}</h4>
+        </div>
+        <div class="">
+        <div class="d-flex flex-row align-items-center">
+          <div class="update-comment d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="/comments/{{comment.id}}/updateComment" class="btn btn-sm btn-info me-md-2">Update</a>
+            <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">Delete</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+<br>
+<br>
+<br>
+</div>
 </div>
 </div>

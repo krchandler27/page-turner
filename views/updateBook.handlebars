@@ -1,0 +1,38 @@
+{{!-- For for updating existing Post --}}
+<div class="row d-flex justify-content-center">
+  <div class="d-flex flex-column mb-3 w-50">
+    <h3 class="text-center text-success titleSize">Update Existing Book:</h3>
+
+<div class="px-5 pt-3" style="background-image: url(''); background-repeat:no-repeat; background-size: contain;">
+    <form class="form pb-5 px-5" id="update-book-outline">
+      <input type="hidden" id="book-id" data-id="{{book.id}}" value="{{book.id}}"/>
+      <div class="form-group">
+        <label for="book-name" id="{{book.id}}" class="" style="font-weight: bold;">Book name:</label>
+        <input class="form-input" type="text" id="book-name" name="book-name" value="{{book.book_name}}"/>
+      </div>
+      <div class="form-group">
+        <label for="book-author" class="" style="font-weight: bold;">Book Author:</label>
+        <input class="form-input" type="text" id="book-author" name="book-author" value="{{book.author}}"/>
+      </div>
+      <div class="form-group">
+        <label for="book-genres" class="" style="font-weight: bold;">Book Genres:</label>
+        <input class="form-input" type="text" id="book-genres" name="book-genres" value="{{book.genres}}"/>
+      </div>
+      <div class="form-group">
+        <label for="book-image" style="font-weight: bold;">image:</label>
+        <input class="form-input" type="text" id="book-image" name="book-image" value="{{book.image}}"/>
+      </div>
+      <div class="form-group">
+        <label for="book-description" style="font-weight: bold;">Description:</label>
+        <textarea class="form-input" type="text" id="book-description" name="book-description"/>{{book.description}}</textarea>
+      </div>
+      <div class="form-group d-flex justify-content-center">
+        <div>
+        <button type="submit" class="btn btn-info">Update Book</button>
+        <a href="/profile" type="button" id="" class="btn btn-danger">Cancel</a>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

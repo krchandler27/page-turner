@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/assets/css/style.css">
   <script type = "text/JavaScript" src = " https://MomentJS.com/downloads/moment.js"></script>
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
-  <script src='../dist/index.global.js'></script>
+  <script src='/dist/index.global.js'></script>
   <script>
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -21,10 +21,10 @@
         calendar.render();
       });
     </script>
-    {{!-- <script src="moment.js"></script>
+    <script src="/dist/moment.js"></script>
     <script>
        moment().format();
-    </script> --}}
+    </script>
 
 </head>
 
@@ -61,6 +61,8 @@
   <script src="/js/createBook.js"></script>
   <script src="/js/addComment.js"></script>
   <script src="/js/calendar.js"></script>
+  <script src="/js/updateBook.js"></script>
+  <script src="/js/updateComment.js"></script>
   {{/if}}
 
   <script src="/js/login.js"></script>

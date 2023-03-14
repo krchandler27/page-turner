@@ -16,6 +16,35 @@ router.post("/", authorize, async (req, res) => {
   }
 });
 
+// Update book created by user from profile
+router.put("/:id", authorize, async (req, res, next) => {
+  try {
+    const findBook = await Book.update(
+      {
+        book_name: req.body.book_name,
+        author: req.body.author,
+        description: req.body.description,
+        genres: req.body.genres,
+        image: req.body.image,
+      },
+      {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      }
+    );
+
+    if (!findBook) {
+      res.status(404).json({ message: "🚫 Could not Update Book 🚫" });
+      return;
+    }
+    res.status(202).json(findBook);
+  } catch (err) {
+    res.status(505).json(err);
+  }
+});
+
 // Delete book created by user
 router.delete("/:id", authorize, async (req, res) => {
   try {
