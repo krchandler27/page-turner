@@ -1,3 +1,8 @@
+app.get('/js/logout.js', function(req, res) {
+  res.set('Content-Type', 'text/javascript');
+  res.sendFile(path.join(__dirname, 'public/js/logout.js'));
+});
+
 // Login if user already has a profile
 const loginForm = async (event) => {
   event.preventDefault();

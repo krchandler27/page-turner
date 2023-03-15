@@ -47,3 +47,8 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
+
+app.get('/js/logout.js', function(req, res) {
+  res.set('Content-Type', 'text/javascript');
+  res.sendFile(path.join(__dirname, 'public/js/logout.js'));
+});
