@@ -20,22 +20,25 @@ router.post("/", async (req, res) => {
 
 // Log in to existing profile
 router.post("/login", async (req, res) => {
+    console.log(req.body)
     try {
         const userInfo = await User.findOne({
-            where: {email: req.body.email}
+            where: { email: req.body.email }
         });
 
         if (!userInfo) {
             res.status(404).json({
-                message: "Email and or password are incorrect 🚫"});
-                return;
+                message: "Email and or password are incorrect 🚫"
+            });
+            return;
         }
 
         const correctPassword = await userInfo.checkPassword(req.body.password);
 
         if (!correctPassword) {
             res.status(404).json({
-                message: "Email and or password are incorrect 🚫"});
+                message: "Email and or password are incorrect 🚫"
+            });
             return;
         }
 
@@ -56,7 +59,8 @@ router.post("/login", async (req, res) => {
 router.post("/logout", (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
-            res.status(202).end();        })
+            res.status(202).end();
+        })
     } else {
         res.status(404).end();
     }
